@@ -59,7 +59,6 @@ class _AuthLoginState extends State<AuthLogin> with ProtocolListener {
   void onProtocolUrlReceived(String url) {
     final uri = Uri.parse(url);
     _handleDeeplink(uri);
-    print(log);
   }
 
   Future<void> _handleDeeplink(Uri uri) async {
