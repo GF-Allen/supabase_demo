@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_demo/auth_login.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:url_protocol/url_protocol.dart';
+import 'package:protocol_handler/protocol_handler.dart';
+
 
 final supabase = Supabase.instance.client;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await protocolHandler.register('tech.gentleflow.supabase');
 
   await Supabase.initialize(
     url: 'https://loqaurrqgqdzircucmrc.supabase.co',
